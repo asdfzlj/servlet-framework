@@ -9,6 +9,9 @@ import java.io.Serializable;
 
 public class BaseEntity implements Serializable {
 	private int id;
+	private int seq; //排序号
+	private int state; //状态
+	
 
 	public int getId() {
 		return id;
@@ -18,4 +21,20 @@ public class BaseEntity implements Serializable {
 		this.id = id;
 	}
 
+	public int getSeq() {
+		return seq;
+	}
+
+	public void setSeq(int seq) {
+		this.seq = seq;
+	}
+
+	public int getState() {
+		return state;
+	}
+
+	public void setState(int state) {
+		this.state = state;
+	}
+	
 }

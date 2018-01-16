@@ -45,4 +45,6 @@ public class Resources extends BaseEntity {
 		this.pid = pid;
 	}
 
+	
+	
 }

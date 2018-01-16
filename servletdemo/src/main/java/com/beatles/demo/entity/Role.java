@@ -34,6 +34,5 @@ public class Role extends BaseEntity {
 
 	public void setRoleDesc(String roleDesc) {
 		this.roleDesc = roleDesc;
-	}
-
+	}	
 }
