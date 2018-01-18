@@ -1,114 +1,86 @@
 <%@ page language="java" pageEncoding="UTF-8"%>
-<%@ include file="../commons/taglibs.jsp"%>
-<div id="sidebar" class="sidebar responsive sidebar-fixed sidebar-scroll">
+<%@ include file="/manage/commons/taglibs.jsp"%>
+<div id="sidebar"
+	class="sidebar responsive  ace-save-state">
 	<script type="text/javascript">
 		try {
-			ace.settings.check('sidebar','fixed')
+			ace.settings.loadState('sidebar')
 		} catch (e) {
 		}
 	</script>
 
+	<div class="sidebar-shortcuts" id="sidebar-shortcuts">
+		<!-- sidebar shortcuts -->
+		<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+			<button class="btn btn-success">
+				<i class="ace-icon fa fa-signal"></i>
+			</button>
+
+			<button class="btn btn-info">
+				<i class="ace-icon fa fa-pencil"></i>
+			</button>
+
+			<button class="btn btn-warning">
+				<i class="ace-icon fa fa-users"></i>
+			</button>
+
+			<button class="btn btn-danger">
+				<i class="ace-icon fa fa-cogs"></i>
+			</button>
+		</div>
+
+		<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+			<span class="btn btn-success"></span> <span class="btn btn-info"></span>
+
+			<span class="btn btn-warning"></span> <span class="btn btn-danger"></span>
+		</div>
+	</div>
 	<!-- /.sidebar-shortcuts -->
+	<!-- menu container -->
+	<ul class="nav nav-list">
+		<li class="active"><a href="index.html"> <i
+				class="menu-icon fa fa-tachometer"></i> <span class="menu-text">
+					首页 </span>
+		</a> <b class="arrow"></b></li>
 
-	<ul class="nav nav-list" style="top: 0px;">
-		<c:choose>
-			<c:when test="${modleName=='index' }">
-				<li class="active">
-			</c:when>
-			<c:otherwise>
-				<li>
-			</c:otherwise>
-		</c:choose>
-
-		<a href="/index">
-			<i class="menu-icon fa fa-home"></i>
-			<span class="menu-text"> 首页 </span>
-		</a>
-
-		<b class="arrow"></b>
-		</li>
-
-		<c:choose>
-			<c:when test="${modleName=='present_query' }">
-				<li class="active hsub">
-			</c:when>
-			<c:otherwise>
-				<li>
-			</c:otherwise>
-		</c:choose>
-		<a href="/present/query/index">
-			<i class="menu-icon fa fa-search"></i>
-			<span class="menu-text"> 考勤查询 </span>
-		</a>
-		</li>
-
-		<c:choose>
-			<c:when test="${modleName=='present_check' }">
-				<li class="active hsub">
-			</c:when>
-			<c:otherwise>
-				<li>
-			</c:otherwise>
-		</c:choose>
-		<a href="/present/check/search/index">
-			<i class="menu-icon fa fa-gavel"></i>
-
-			<span class="menu-text"> 考勤审核 </span>
-
-		</a>
-		</li>
-		
-		<li class="hsub">
-			<a href="#" class="dropdown-toggle">
-				<i class="menu-icon fa fa-cog"></i>
-
-				<span class="menu-text"> 系统管理 </span>
-
-				<b class="arrow fa fa-angle-down"></b>
-			</a>
-
-			<b class="arrow"></b>
+		<li class=""><a href="#" class="dropdown-toggle"> <i
+				class="menu-icon fa fa-desktop"></i> <span class="menu-text">
+					系统管理 </span> <b class="arrow fa fa-angle-down"></b>
+		</a> <b class="arrow"></b>
 
 			<ul class="submenu">
-				<li class="">
-					<a href="faq.html">
-						<i class="menu-icon fa fa-caret-right"></i>
-						用户管理
-					</a>
+				<li class=""><a href="typography.html"> <i
+						class="menu-icon fa fa-caret-right"></i> 系统配置
+				</a> <b class="arrow"></b></li>
 
-					<b class="arrow"></b>
-				</li>
+				<li class=""><a href="elements.html"> <i
+						class="menu-icon fa fa-caret-right"></i> 字典管理
+				</a> <b class="arrow"></b></li>
 
-				<li class="">
-					<a href="error-404.html">
-						<i class="menu-icon fa fa-caret-right"></i>
-						角色管理
-					</a>
+				<li class=""><a href="buttons.html"> <i
+						class="menu-icon fa fa-caret-right"></i> 用户管理
+				</a> <b class="arrow"></b></li>
 
-					<b class="arrow"></b>
-				</li>
+				<li class=""><a href="content-slider.html"> <i
+						class="menu-icon fa fa-caret-right"></i> 部门管理
+				</a> <b class="arrow"></b></li>
 
-				<li class="">
-					<a href="permission.html">
-						<i class="menu-icon fa fa-caret-right"></i>
-						权限管理
-					</a>
-
-					<b class="arrow"></b>
-				</li>
-
-			</ul>
-		</li>
+				<li class=""><a href="treeview.html"> <i
+						class="menu-icon fa fa-caret-right"></i> 资源管理
+				</a> <b class="arrow"></b></li>
+			</ul></li>
 	</ul>
 	<!-- /.nav-list -->
 
 	<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
-		<i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+		<i id="sidebar-toggle-icon"
+			class="ace-icon fa fa-angle-double-left ace-save-state"
+			data-icon1="ace-icon fa fa-angle-double-left"
+			data-icon2="ace-icon fa fa-angle-double-right"></i>
 	</div>
-
 	<script type="text/javascript">
 		try {
-			ace.settings.check('sidebar','collapsed')
+			ace.settings.check('sidebar', 'collapsed')
 		} catch (e) {
 		}
 	</script>
