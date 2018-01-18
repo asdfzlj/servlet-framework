@@ -7,6 +7,9 @@
 
 <!--[if IE]>
 <script src="${ace}/js/jquery-1.11.3.min.js"></script>
+<%--
+	页面js需要加载的资源 
+--%>
 <![endif]-->
 <script type="text/javascript">
 	if ('ontouchstart' in document.documentElement)
