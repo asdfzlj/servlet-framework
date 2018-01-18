@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@include file="/taglibs.jsp"%>
+<%@include file="/manage/commons/taglibs.jsp"%>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -52,7 +52,7 @@
 								<span class="white" id="id-text2">后台登录</span>
 							</h1>
 							<h4 class="light-blue" id="id-company-text">&copy;
-								beatles.com</h4>
+								${copyright }</h4>
 						</div>
 
 						<div class="space-6"></div>
