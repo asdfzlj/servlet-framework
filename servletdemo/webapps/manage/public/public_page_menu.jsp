@@ -38,7 +38,7 @@
 	<!-- /.sidebar-shortcuts -->
 	<!-- menu container -->
 	<ul class="nav nav-list">
-		<li class="active"><a href="index.html"> <i
+		<li class="active"><a href="${ctx }/manage/index/index.jsp"> <i
 				class="menu-icon fa fa-tachometer"></i> <span class="menu-text">
 					首页 </span>
 		</a> <b class="arrow"></b></li>

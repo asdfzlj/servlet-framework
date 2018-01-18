@@ -34,3 +34,15 @@
 <!-- ace scripts -->
 <script src="${ace}/js/ace-elements.min.js"></script>
 <script src="${ace}/js/ace.min.js"></script>
+<script>
+$(document).ready(function(){
+	$(".nav .nav-list").find("li").each(function(){
+		var a=$(this).find("a:first")[0];
+		if($(a).attr("href")==location.pathname){
+			$(".nav .nav-list").find("li").addClass('action');
+		}else{
+			$(this).removeClass("active")
+		}
+	});
+});
+</script>
