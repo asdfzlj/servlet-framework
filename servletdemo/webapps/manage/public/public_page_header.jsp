@@ -20,7 +20,7 @@
 			<ul class="nav ace-nav">
 				<li class="light-blue dropdown-modal"><a data-toggle="dropdown"
 					href="#" class="dropdown-toggle"> <img class="nav-user-photo"
-						src="assets/images/avatars/user.jpg" alt="Jason's Photo" /> <span
+						src="${ace }/images/avatars/user.jpg" alt="Jason's Photo" /> <span
 						class="user-info"> <small>欢迎您,</small> Michael
 					</span> <i class="ace-icon fa fa-caret-down"></i>
 				</a>

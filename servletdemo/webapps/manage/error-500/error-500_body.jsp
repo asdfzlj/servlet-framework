@@ -9,8 +9,8 @@
 			<div class="well">
 				<h1 class="grey lighter smaller">
 					<span class="blue bigger-125"> <i
-						class="ace-icon fa fa-sitemap"></i> 404
-					</span> 页面没有找到
+						class="ace-icon fa fa-sitemap"></i> 500
+					</span> 服务器内部发生错误，请联系管理员！
 				</h1>
 
 				<hr />
