@@ -34,15 +34,22 @@
 <!-- ace scripts -->
 <script src="${ace}/js/ace-elements.min.js"></script>
 <script src="${ace}/js/ace.min.js"></script>
+<!-- 左侧菜单记住状态 -->
 <script>
-$(document).ready(function(){
-	$(".nav .nav-list").find("li").each(function(){
-		var a=$(this).find("a:first")[0];
-		if($(a).attr("href")==location.pathname){
-			$(".nav .nav-list").find("li").addClass('action');
-		}else{
-			$(this).removeClass("active")
-		}
+	$(document).ready(function() {
+		var url = document.location.href;
+		var index1 = url.lastIndexOf('/');
+		var page_name = url.substring(index1 + 1, url.length);
+		var a_l = $('a');
+		a_l.each(function() {
+			var that = $(this);
+			var url2 = that.attr('href');
+			var index2 = url2.lastIndexOf('/');
+			var page_name2 = url2.substring(index2 + 1, url2.length);
+			if (page_name == page_name2) {
+				$(this).parent().addClass('active');
+				$(this).parent().parent().parent().addClass('open');
+			}
+		});
 	});
-});
 </script>
