@@ -25,4 +25,4 @@
 <!--[if lte IE 9]>
 		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
 		<![endif]-->
-<script src="${ctx }/js/ace-extra.min.js"></script>
+<script src="${ace}/js/ace-extra.min.js"></script>
