@@ -21,7 +21,7 @@
 		<![endif]-->
 <link rel="stylesheet" href="${ace }/css/ace-skins.min.css" />
 <link rel="stylesheet" href="${ace }/css/ace-rtl.min.css" />
-<link rel="shortcut icon" href="${ace }/images/webPicture/javas.jpg"/>
+<link rel="shortcut icon" href="${ctx }/assets/images/icon.jpg"/>
 <!--[if lte IE 9]>
 		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
 		<![endif]-->
