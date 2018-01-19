@@ -44,7 +44,7 @@
 		</a> <b class="arrow"></b></li>
 
 		<li class=""><a href="#" class="dropdown-toggle"> <i
-				class="menu-icon fa fa-desktop"></i> <span class="menu-text">
+				class="menu-icon fa  fa-cogs"></i> <span class="menu-text">
 					系统管理 </span> <b class="arrow fa fa-angle-down"></b>
 		</a> <b class="arrow"></b>
 
