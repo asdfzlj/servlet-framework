@@ -44,8 +44,12 @@
 		a_l.each(function() {
 			var that = $(this);
 			var url2 = that.attr('href');
-			var index2 = url2.lastIndexOf('/');
-			var page_name2 = url2.substring(index2 + 1, url2.length);
+			var index2='';
+			var page_name2='';
+			if(typeof(url2)!="undefined"){
+				index2 = url2.lastIndexOf("/");
+				page_name2 = url2.substring(index2 + 1, url2.length);
+			} 
 			if (page_name == page_name2) {
 				$(this).parent().addClass('active');
 				$(this).parent().parent().parent().addClass('open');

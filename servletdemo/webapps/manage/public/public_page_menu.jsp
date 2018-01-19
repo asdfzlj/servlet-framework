@@ -65,7 +65,7 @@
 						class="menu-icon fa fa-caret-right"></i> 部门管理
 				</a> <b class="arrow"></b></li>
 
-				<li class=""><a href="treeview.html"> <i
+				<li class=""><a href="${ctx }/manage/resources/resources.jsp"> <i
 						class="menu-icon fa fa-caret-right"></i> 资源管理
 				</a> <b class="arrow"></b></li>
 			</ul></li>

@@ -19,4 +19,4 @@
 <%--定义ace资源的路径 变量 --%>
 <c:set var="ace" value="${ctx }/assets/ace"/>
 <%--定义组件的路径变量 --%>
-<c:set var="vendorsBase" value="${base }/assets/vendors" />
+<c:set var="vendorsBase" value="${ctx }/assets/vendors" />
