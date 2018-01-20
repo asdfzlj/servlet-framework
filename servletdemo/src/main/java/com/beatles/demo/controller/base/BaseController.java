@@ -1,5 +1,6 @@
 package com.beatles.demo.controller.base;
 
+import java.io.IOException;
 import java.io.Serializable;
 
 import javax.servlet.http.HttpServlet;
@@ -11,8 +12,8 @@ import javax.servlet.http.HttpServletResponse;
  * @createTime 2018年1月21日 上午1:58:57
  */
 public abstract class BaseController extends HttpServlet implements Serializable {
-
-	protected abstract void doGet(HttpServletRequest request, HttpServletResponse response);
+	
+	protected abstract void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException;
 
 	protected abstract void doPost(HttpServletRequest request, HttpServletResponse response);
 
