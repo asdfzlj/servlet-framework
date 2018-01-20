@@ -18,7 +18,6 @@ public class ResourcesBizImpl implements IResourcesBiz{
 	}
 	@Override
 	public List<Resources> treeGrid() {
-		// TODO Auto-generated method stub
 		return resourcesDao.getResourcesViewList();
 	}
 
