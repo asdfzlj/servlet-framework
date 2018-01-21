@@ -7,4 +7,4 @@
 		<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>新增
 	</button>
 </div>
-<table id="resourcesGrid" class="table"></table>
+<table id="resourcesGrid" class=".table-bordered"></table>
