@@ -12,13 +12,18 @@
       url: '${ctx}/resources',
       height: $(window).height(),
       striped: true,
+      toolbar:'#toolbar',
+      search:true,
+      showColumns:true,
+      showRefresh:true,
+      showToggle:true,
       //sidePagination: 'server',
       idField: 'id',
       columns: [
-       /*  {
+        {
           field: 'ck',
           checkbox: true
-        }, */
+        }, 
       	{
         	field:'id',
         	title:'资源编号',
