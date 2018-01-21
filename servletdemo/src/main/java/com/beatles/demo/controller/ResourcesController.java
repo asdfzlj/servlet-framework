@@ -32,8 +32,11 @@ public class ResourcesController extends BaseController {
 	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		response.getWriter().print(FastJSONUtils.toJsonString(resourcesBiz.treeGrid()));
+		response.getWriter().write(FastJSONUtils.toJsonString(resourcesBiz.treeGrid()));
+		logger.info(FastJSONUtils.toJsonString(resourcesBiz.treeGrid()));
 		logger.info(getID(request));
+		response.getWriter().flush();
+		response.getWriter().close();
 	}
 
 	@Override
