@@ -68,6 +68,25 @@
 				});
 			}
 		});
+		/*表单验证操作*/
+		$('form').bootstrapValidator({
+			message: 'This value is not valid',
+			feedbackIcons:{
+				valid: 'glyphicon glyphicon-ok',
+				invalid: 'glyphicon glyphicon-remove',
+				validating: 'glyphicon glyphicon-refresh'
+			},
+	         fields:{
+	        	 title:{
+	        		 message:'资源名称验证失败',
+	        		 validators:{
+	        			 notEmpty:{
+	        				 message:'资源名称不能为空'
+	        			 }
+	        		 }
+	        	 }
+	         }
+		});
 	});
 
 	// 格式化类型
@@ -92,24 +111,6 @@
 	    return '<span class="label label-default">锁定</span>';
 	  } 
 	}*/
-	/*表单验证操作*/
-	$('form').bootstrapValidator({
-		message: 'This value is not valid',
-		feedbackIcons:{
-			valid: 'glyphicon glyphicon-ok',
-			invalid: 'glyphicon glyphicon-remove',
-			validating: 'glyphicon glyphicon-refresh'
-		},
-         fields:{
-        	 title:{
-        		 message:'资源名称验证失败',
-        		 validators:{
-        			 notEmpty:{
-        				 message:'资源名称不能为空'
-        			 }
-        		 }
-        	 }
-         }
-	});
+	
 	
 </script>
