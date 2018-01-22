@@ -9,6 +9,7 @@
 <script type="text/javascript">
 	var $table = $('#resourcesGrid');
 	$(function() {
+		/*数据列表*/
 		$table.bootstrapTable({
 			url : '${ctx}/resources',
 			height : $(window).height(),
@@ -89,4 +90,17 @@
 	    return '<span class="label label-default">锁定</span>';
 	  } 
 	}*/
+	/*添加操作*/
+	$("#btnAdd").click(function(){
+		alert($("#resourcesForm").serialize());
+		/* $.ajax({
+			type:"post",
+			dataType:"json",
+			url:"",
+			data:$("#resourcesForm").serialize(),
+			success:function(result){
+				console.log(result);
+			}
+		}); */
+	});
 </script>
