@@ -14,14 +14,23 @@ import com.beatles.utils.DBUtil;
  * @createTime 2018年1月16日 上午9:46:22
  */
 public interface IResourcesDao {
-	DBUtil util=new DBUtil();
+	DBUtil util = new DBUtil();
+
 	List<Resources> getResourcesViewList();
-	
-	default List<Resources> _resultList1(ResultSet rs){
-		List<Resources> _list=new ArrayList<Resources>();
+
+	boolean save(Resources t);
+
+	boolean delete(int id);
+
+	boolean delete(String ids);
+
+	boolean update(Resources t);
+
+	default List<Resources> _resultList1(ResultSet rs) {
+		List<Resources> _list = new ArrayList<Resources>();
 		try {
-			while(rs.next()) {
-				Resources dto=new Resources();
+			while (rs.next()) {
+				Resources dto = new Resources();
 				dto.setIcon(rs.getString("icon"));
 				dto.setId(rs.getInt("id"));
 				dto.setPid(rs.getInt("pid"));
@@ -33,17 +42,17 @@ public interface IResourcesDao {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}finally {
+		} finally {
 			util.release();
 		}
 		return _list;
 	}
-	
-	default List<ResourcesDTO> _resultList(ResultSet rs){
-		List<ResourcesDTO> _list=new ArrayList<ResourcesDTO>();
+
+	default List<ResourcesDTO> _resultList(ResultSet rs) {
+		List<ResourcesDTO> _list = new ArrayList<ResourcesDTO>();
 		try {
-			while(rs.next()) {
-				ResourcesDTO dto=new ResourcesDTO();
+			while (rs.next()) {
+				ResourcesDTO dto = new ResourcesDTO();
 				dto.setIcon(rs.getString("icon"));
 				dto.setId(rs.getInt("id"));
 				dto.setPid(rs.getInt("pid"));
@@ -57,7 +66,7 @@ public interface IResourcesDao {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}finally {
+		} finally {
 			util.release();
 		}
 		return _list;

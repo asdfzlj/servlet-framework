@@ -10,4 +10,5 @@ import com.beatles.demo.entity.Resources;
  */
 public interface IResourcesBiz {
 	public List<Resources> treeGrid();
+	
 }

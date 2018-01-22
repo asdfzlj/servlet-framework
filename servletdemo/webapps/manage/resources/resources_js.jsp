@@ -56,7 +56,7 @@
 				//jquery.treegrid.js
 				$table.treegrid({
 					initialState : 'collapsed',
-					treeColumn : 1,
+					treeColumn : 2,
 					expanderExpandedClass : 'glyphicon glyphicon-minus',
 					expanderCollapsedClass : 'glyphicon glyphicon-plus',
 					onChange : function() {
