@@ -6,6 +6,8 @@
 <script
 	src="${vendorsBase}/bootstrap-table/extensions/treegrid/bootstrap-table-treegrid.js"></script>
 <script src="${vendorsBase}/treeGrid/jquery.treegrid.js"></script>
+<script
+	src="${vendorsBase }/bootstrap-validator/js/bootstrapValidator.min.js"></script>
 <script type="text/javascript">
 	var $table = $('#resourcesGrid');
 	$(function() {
@@ -90,17 +92,24 @@
 	    return '<span class="label label-default">锁定</span>';
 	  } 
 	}*/
-	/*添加操作*/
-	$("#btnAdd").click(function(){
-		alert($("#resourcesForm").serialize());
-		/* $.ajax({
-			type:"post",
-			dataType:"json",
-			url:"",
-			data:$("#resourcesForm").serialize(),
-			success:function(result){
-				console.log(result);
-			}
-		}); */
+	/*表单验证操作*/
+	$('form').bootstrapValidator({
+		message: 'This value is not valid',
+		feedbackIcons:{
+			valid: 'glyphicon glyphicon-ok',
+			invalid: 'glyphicon glyphicon-remove',
+			validating: 'glyphicon glyphicon-refresh'
+		},
+         fields:{
+        	 title:{
+        		 message:'资源名称验证失败',
+        		 validators:{
+        			 notEmpty:{
+        				 message:'资源名称不能为空'
+        			 }
+        		 }
+        	 }
+         }
 	});
+	
 </script>
