@@ -19,7 +19,7 @@ public interface IResourcesDao {
 	List<Resources> getResourcesViewList();
 
 	boolean save(Resources t);
-
+	
 	boolean delete(int id);
 
 	boolean delete(String ids);

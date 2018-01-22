@@ -17,5 +17,29 @@ public class ResourcesDaoImpl implements IResourcesDao {
 		String sql="select * from sys_res order by seq";
 		return _resultList1(util.query(sql));
 	}
+
+	@Override
+	public boolean save(Resources t) {
+		
+		return false;
+	}
+
+	@Override
+	public boolean delete(int id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean delete(String ids) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean update(Resources t) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 	
 }

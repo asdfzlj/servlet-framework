@@ -45,6 +45,11 @@ public class Resources extends BaseEntity {
 		this.pid = pid;
 	}
 
+	@Override
+	public String toString() {
+		return "Resources [title=" + title + ", url=" + url + ", icon=" + icon + ", pid=" + pid + "]";
+	}
+
 	
 	
 }
