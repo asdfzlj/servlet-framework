@@ -18,7 +18,7 @@ public class ResourcesBizImpl implements IResourcesBiz{
 	}
 	@Override
 	public List<Resources> treeGrid() {
-		return resourcesDao.getResourcesViewList();
+		return resourcesDao.findAllObjects();
 	}
 
 }

@@ -15,7 +15,7 @@ public class ResourcesDaoTest {
 	@Test
 	public void getResourcesViewListTest() {
 		
-		String json=FastJSONUtils.toJsonString(dao.getResourcesViewList());
+		String json=FastJSONUtils.toJsonString(dao.findAllObjects());
 		System.out.println(json);
 	}
 }

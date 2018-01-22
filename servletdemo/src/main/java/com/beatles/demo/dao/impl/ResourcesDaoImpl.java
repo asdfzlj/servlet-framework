@@ -13,33 +13,48 @@ import com.beatles.demo.view.ResourcesDTO;
 public class ResourcesDaoImpl implements IResourcesDao {
 
 	@Override
-	public List<Resources> getResourcesViewList() {
-		String sql="select * from sys_res order by seq";
-		return _resultList1(util.query(sql));
+	public List<Resources> findAllObjects() {
+		String sql = "select * from sys_res order by seq";
+		return _resultListEntity(util.query(sql));
 	}
 
 	@Override
 	public boolean save(Resources t) {
-		
-		return false;
+		String sql = "insert into sys_res(title,url,icon,pid,seq) values(?,?,?,?,?)";
+		Object[] params = { t.getTitle(), t.getUrl(), t.getIcon(), t.getPid(), t.getSeq() };
+		return util.update(sql, params) == 1;
 	}
 
 	@Override
 	public boolean delete(int id) {
-		// TODO Auto-generated method stub
-		return false;
+		String sql = "delete from sys_res where id=?";
+		Object[] params = { id };
+		return util.update(sql, params) == 1;
 	}
 
 	@Override
 	public boolean delete(String ids) {
-		// TODO Auto-generated method stub
-		return false;
+		String sql = "delte from sys_res where id in(" + ids + ")";
+		return util.update(sql) >= 1;
 	}
 
 	@Override
 	public boolean update(Resources t) {
-		// TODO Auto-generated method stub
-		return false;
+		String sql = "update sys_res set title=?,url=?,icon=?,pid=?,seq=? where id=?";
+		Object[] params = { t.getTitle(), t.getUrl(), t.getIcon(), t.getPid(), t.getSeq(), t.getId() };
+		return util.update(sql, params) == 1;
 	}
-	
+
+	@Override
+	public Resources findObjectById(int id) {
+		String sql = "select * from sys_res where id=?";
+		return _resultListEntity(util.query(sql, id)).get(0);
+	}
+
+	@Override
+	public List<Resources> findObjectsByPid(int pid) {
+		String sql = "select * from sys_res where pid=?";
+		return _resultListEntity(util.query(sql, pid));
+	}
+
 }

@@ -16,7 +16,7 @@ import com.beatles.utils.DBUtil;
 public interface IResourcesDao {
 	DBUtil util = new DBUtil();
 
-	List<Resources> getResourcesViewList();
+	List<Resources> findAllObjects();
 
 	boolean save(Resources t);
 	
@@ -25,8 +25,12 @@ public interface IResourcesDao {
 	boolean delete(String ids);
 
 	boolean update(Resources t);
+	
+	Resources findObjectById(int id);
+	
+	List<Resources> findObjectsByPid(int pid);
 
-	default List<Resources> _resultList1(ResultSet rs) {
+	default List<Resources> _resultListEntity(ResultSet rs) {
 		List<Resources> _list = new ArrayList<Resources>();
 		try {
 			while (rs.next()) {
@@ -48,7 +52,7 @@ public interface IResourcesDao {
 		return _list;
 	}
 
-	default List<ResourcesDTO> _resultList(ResultSet rs) {
+	default List<ResourcesDTO> _resultListDTO(ResultSet rs) {
 		List<ResourcesDTO> _list = new ArrayList<ResourcesDTO>();
 		try {
 			while (rs.next()) {
