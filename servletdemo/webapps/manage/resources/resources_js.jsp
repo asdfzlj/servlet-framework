@@ -8,6 +8,8 @@
 <script src="${vendorsBase}/treeGrid/jquery.treegrid.js"></script>
 <script
 	src="${vendorsBase }/bootstrap-validator/js/bootstrapValidator.min.js"></script>
+<script
+	src="${vendorsBase }/bootstrap-treeview/bootstrap-treeview.min.js"></script>
 <script type="text/javascript">
 	var $table = $('#resourcesGrid');
 	$(function() {
@@ -19,7 +21,7 @@
 			toolbar : '#toolbar',
 			search : true,
 			showColumns : true,
-			height:'100%',
+			height : '100%',
 			showRefresh : true,
 			showToggle : true,
 			//sidePagination: 'server',
@@ -70,23 +72,36 @@
 		});
 		/*表单验证操作*/
 		$('form').bootstrapValidator({
-			message: 'This value is not valid',
-			feedbackIcons:{
-				valid: 'glyphicon glyphicon-ok',
-				invalid: 'glyphicon glyphicon-remove',
-				validating: 'glyphicon glyphicon-refresh'
+			message : 'This value is not valid',
+			feedbackIcons : {
+				valid : 'glyphicon glyphicon-ok',
+				invalid : 'glyphicon glyphicon-remove',
+				validating : 'glyphicon glyphicon-refresh'
 			},
-	         fields:{
-	        	 title:{
-	        		 message:'资源名称验证失败',
-	        		 validators:{
-	        			 notEmpty:{
-	        				 message:'资源名称不能为空'
-	        			 }
-	        		 }
-	        	 }
-	         }
+			fields : {
+				title : {
+					message : '资源名称验证失败',
+					validators : {
+						notEmpty : {
+							message : '资源名称不能为空'
+						}
+					}
+				}
+			}
 		});
+		/*下拉树型结构*/
+		$.ajax({  
+            type : "post",  
+            url : "",  
+            success : function(data, status) {  
+                if (status == "success") {  
+                    data1 = eval("[" + data + "]");  
+                }  
+            },  
+            error : function() {  
+                toastr.error('Error');  
+            },  
+        });  
 	});
 
 	// 格式化类型
@@ -111,6 +126,4 @@
 	    return '<span class="label label-default">锁定</span>';
 	  } 
 	}*/
-	
-	
 </script>

@@ -33,10 +33,8 @@
 					<div class="form-group">
 						<label for="pid" class="col-sm-2 control-label">上级资源:</label>
 						<div class="col-sm-10">
-							<select class="form-control" name="pid" id="pid">
-								<option value="1">首页</option>
-								<option value="2">系统管理</option>
-							</select>
+							<input type="text" id="pid" name="pid" class="form-control" placeholder="上级资源"/>
+							<div id="treeview" style="display:none;"></div>
 						</div>
 					</div>
 					<div class="hr-line-dashed"></div>
