@@ -59,7 +59,18 @@ public class ResourcesBizImpl implements IResourcesBiz {
 	public List<Tree> tree() {
 		List<Resources> resources=null;
 		List<Tree> treeResources=new ArrayList<Tree>();
-		return null;
+		resources=resourcesDao.findAllObjects();
+		if((resources!=null)&&(resources.size()>0)) {
+			for(Resources r:resources) {
+				Tree tree=new Tree();
+				tree.setId(r.getId()+"");
+				tree.setPid(r.getPid()+"");
+				tree.setText(r.getTitle());
+				tree.setIconCls(r.getIcon());
+				treeResources.add(tree);
+			}
+		}
+		return treeResources;
 	}
 	
 }

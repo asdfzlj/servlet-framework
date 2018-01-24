@@ -24,4 +24,8 @@ public class ResourcesBizTest {
 		System.out.println(FastJSONUtils.toJsonString(resourcesBiz.treeGrid()));
 		
 	}
+	@Test
+	public void testTree() {
+		System.out.println(FastJSONUtils.toJsonString(resourcesBiz.tree()));
+	}
 }
