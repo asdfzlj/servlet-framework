@@ -3,6 +3,7 @@ package com.beatles.demo.biz;
 import java.util.List;
 
 import com.beatles.demo.entity.Resources;
+import com.beatles.page.Tree;
 
 /**
  * @author zhang lj
@@ -22,6 +23,8 @@ public interface IResourcesBiz {
 	Resources getResourcesById(int id);
 	
 	List<Resources> getResourcesByPid(int pid);
+	
+	List<Tree> tree();
 	
 	
 }

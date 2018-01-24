@@ -1,11 +1,13 @@
 package com.beatles.demo.biz.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.beatles.demo.biz.IResourcesBiz;
 import com.beatles.demo.dao.IResourcesDao;
 import com.beatles.demo.dao.impl.ResourcesDaoImpl;
 import com.beatles.demo.entity.Resources;
+import com.beatles.page.Tree;
 
 /**
  * @author zhang lj
@@ -53,4 +55,11 @@ public class ResourcesBizImpl implements IResourcesBiz {
 		return resourcesDao.findObjectsByPid(pid);
 	}
 
+	@Override
+	public List<Tree> tree() {
+		List<Resources> resources=null;
+		List<Tree> treeResources=new ArrayList<Tree>();
+		return null;
+	}
+	
 }
