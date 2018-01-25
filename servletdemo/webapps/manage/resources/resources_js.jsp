@@ -90,18 +90,51 @@
 			}
 		});
 		/*下拉树型结构*/
-		$.ajax({  
-            type : "post",  
-            url : "",  
-            success : function(data, status) {  
-                if (status == "success") {  
-                    data1 = eval("[" + data + "]");  
-                }  
-            },  
-            error : function() {  
-                toastr.error('Error');  
-            },  
-        });  
+		$("#treeview").treeview({
+			data : 0,
+			icon : "glyphicon glyphicon-stop",
+			selectedIcon : "glyphicon glyphicon-stop",
+			collapseIcon : "glyphicon glyphicon-minus",
+			expandIcon : "glyphicon glyphicon-plus",
+			color : "#000000",
+			backColor : "#FFFFFF",
+			showIcon : true,
+			showCheckbox : false,
+			onhoverColor : "#E8E8E8",
+			showBorder : true,
+			showTags : true,
+			highlightSelected : true,
+			highlightSearchResults : false,
+			selectedBackColor : "#8D9CAA",
+			levels : 3,
+			tags : [ 'available' ],
+			onNodeSelected : function(event, data) {
+				if (data.id == undefined || data.id == null) {
+					return;
+				}
+				$("input[name='parentId']").val(data.id);
+				$("input[name='parentNodeId']").val(data.nodeId);
+			},
+			onNodeExpanded : function(event, data) {
+				$.ajax({
+					type : "Post",
+					url : "${ctx}/resources/op=treeView?id=" + data.id,
+					dataType : "json",
+					success : function(result) {
+						for (var index = 0; index < result.length; index++) {
+							var item = result[index];
+							$("#tree1").treeview("addNode", [ data.nodeId, {
+								node : {
+									text : item.text,
+									id : item.id
+								},
+								silent : true
+							} ]);
+						}
+					}
+				});
+			}
+		});
 	});
 
 	// 格式化类型

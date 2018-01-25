@@ -34,7 +34,7 @@
 						<label for="pid" class="col-sm-2 control-label">上级资源:</label>
 						<div class="col-sm-10">
 							<input type="text" id="pid" name="pid" class="form-control" placeholder="上级资源"/>
-							<div id="treeview" style="display:none;"></div>
+							<div id="treeview"></div>
 						</div>
 					</div>
 					<div class="hr-line-dashed"></div>
