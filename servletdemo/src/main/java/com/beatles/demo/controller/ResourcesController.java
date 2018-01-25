@@ -20,39 +20,57 @@ import com.beatles.utils.FastJSONUtils;
  * @createTime 2018年1月21日 上午1:27:52
  */
 @WebServlet("/resources")
-public class ResourcesController extends BaseController {
+public class ResourcesController extends HttpServlet{
 	private Logger logger;
 	private IResourcesBiz resourcesBiz;
-	@Override
+
 	public void init() throws ServletException {
-		logger=Logger.getLogger(this.getClass());
-		resourcesBiz=new ResourcesBizImpl();
+		logger = Logger.getLogger(this.getClass());
+		resourcesBiz = new ResourcesBizImpl();
 	}
-	
-	
-	@Override
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		process(request, response);
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		process(request, response);
+	}
+
+	protected void process(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		String op=request.getParameter("op");
+		if("resources".equals(op)) {
+			resources(request,response);
+		}else if("treeView".equals(op)) {
+			treeView(request, response);
+		}else {
+			resources(request, response);
+		}
+	}
+	/**
+	 * 获取资源列表
+	 * @param request
+	 * @param response
+	 * @throws IOException
+	 */
+	private void resources(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		response.getWriter().write(FastJSONUtils.toJsonString(resourcesBiz.treeGrid()));
-		logger.info(FastJSONUtils.toJsonString(resourcesBiz.treeGrid()));
-		logger.info(getID(request));
+		response.getWriter().flush();
+		response.getWriter().close();
+	}
+	/**
+	 * 获取树型结构
+	 * @param request
+	 * @param response
+	 * @throws IOException
+	 */
+	protected void treeView(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		int id = Integer.parseInt(request.getParameter("id"));
+		String json = FastJSONUtils.toJsonString(resourcesBiz.treeView(id));
+		logger.info(json);
+		response.getWriter().write(json);
 		response.getWriter().flush();
 		response.getWriter().close();
 	}
 
-	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) {
-		logger.info(getID(request));
-	}
-
-	@Override
-	protected void doPut(HttpServletRequest request, HttpServletResponse response) {
-		logger.info(getID(request));
-	}
-
-	@Override
-	protected void doDelete(HttpServletRequest request, HttpServletResponse response) {
-		logger.info(getID(request));
-	}
-	
-	
 }
