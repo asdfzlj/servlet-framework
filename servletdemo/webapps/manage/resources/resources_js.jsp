@@ -90,51 +90,38 @@
 			}
 		});
 		/*下拉树型结构*/
-		$("#treeview").treeview({
-			data : 0,
-			icon : "glyphicon glyphicon-stop",
-			selectedIcon : "glyphicon glyphicon-stop",
-			collapseIcon : "glyphicon glyphicon-minus",
-			expandIcon : "glyphicon glyphicon-plus",
-			color : "#000000",
-			backColor : "#FFFFFF",
-			showIcon : true,
-			showCheckbox : false,
-			onhoverColor : "#E8E8E8",
-			showBorder : true,
-			showTags : true,
-			highlightSelected : true,
-			highlightSearchResults : false,
-			selectedBackColor : "#8D9CAA",
-			levels : 3,
-			tags : [ 'available' ],
-			onNodeSelected : function(event, data) {
-				if (data.id == undefined || data.id == null) {
-					return;
-				}
-				$("input[name='parentId']").val(data.id);
-				$("input[name='parentNodeId']").val(data.nodeId);
-			},
-			onNodeExpanded : function(event, data) {
-				$.ajax({
-					type : "Post",
-					url : "${ctx}/resources/op=treeView?id=" + data.id,
-					dataType : "json",
-					success : function(result) {
-						for (var index = 0; index < result.length; index++) {
-							var item = result[index];
-							$("#tree1").treeview("addNode", [ data.nodeId, {
-								node : {
-									text : item.text,
-									id : item.id
-								},
-								silent : true
-							} ]);
-						}
+		$.ajax({
+			type : "Post",
+			url : "${ctx}/resources?op=treeView&id=0",
+			dataType : "json",
+			success : function(result) {
+				$('#treeview').treeview({
+					data : result, // 数据源
+					//showCheckbox : true, //是否显示复选框
+					highlightSelected : true, //是否高亮选中
+					//nodeIcon: 'glyphicon glyphicon-user',    //节点上的图标
+					//nodeIcon : 'glyphicon glyphicon-globe',
+					emptyIcon : '', //没有子节点的节点图标
+					multiSelect : true, //多选
+					levels : 1,
+					onNodeChecked : function(event, data) {
+						alert(data.id);
+					},
+					onNodeSelected : function(event, data) {
+						alert(data.id);
 					}
 				});
+			},
+			error : function() {
+				alert("树形结构加载失败！")
 			}
 		});
+		//结束 
+		//触发文本框事件
+		$("#pid").click(function() {
+			$("#treeview").show();
+		});
+		//结束 
 	});
 
 	// 格式化类型
