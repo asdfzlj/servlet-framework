@@ -28,4 +28,8 @@ public class ResourcesBizTest {
 	public void testTree() {
 		System.out.println(FastJSONUtils.toJsonString(resourcesBiz.tree()));
 	}
+	@Test
+	public void testTreeView() {
+		System.out.print(FastJSONUtils.toJsonString(resourcesBiz.treeView(0)));
+	}
 }

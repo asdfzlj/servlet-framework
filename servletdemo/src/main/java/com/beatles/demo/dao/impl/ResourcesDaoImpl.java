@@ -5,6 +5,7 @@ import java.util.List;
 import com.beatles.demo.dao.IResourcesDao;
 import com.beatles.demo.entity.Resources;
 import com.beatles.demo.view.ResourcesDTO;
+import com.beatles.utils.LogUtil;
 
 /**
  * @author zhang lj
@@ -54,6 +55,7 @@ public class ResourcesDaoImpl implements IResourcesDao {
 	@Override
 	public List<Resources> findObjectsByPid(int pid) {
 		String sql = "select * from sys_res where pid=?";
+		LogUtil.info(sql);
 		return _resultListEntity(util.query(sql, pid));
 	}
 

@@ -8,6 +8,7 @@ import com.beatles.demo.dao.IResourcesDao;
 import com.beatles.demo.dao.impl.ResourcesDaoImpl;
 import com.beatles.demo.entity.Resources;
 import com.beatles.page.Tree;
+import com.beatles.page.TreeView;
 
 /**
  * @author zhang lj
@@ -71,6 +72,25 @@ public class ResourcesBizImpl implements IResourcesBiz {
 			}
 		}
 		return treeResources;
+	}
+
+	@Override
+	public List<TreeView> treeView(int pid) {
+		List<TreeView> rootList=null;
+		//根据父ID获取子结点 
+		List<Resources> nodeList=resourcesDao.findObjectsByPid(pid);
+		if(nodeList!=null&&nodeList.size()>0) {
+			rootList=new ArrayList<TreeView>();
+			TreeView node=null;
+			for(Resources t:nodeList) {
+				node=new TreeView();
+				node.setId(t.getId());
+				node.setText(t.getTitle());
+				node.setNodes(treeView(t.getId()));
+				rootList.add(node);
+			}
+		}
+		return rootList;
 	}
 	
 }

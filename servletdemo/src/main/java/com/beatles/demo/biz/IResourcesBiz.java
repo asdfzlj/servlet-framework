@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.beatles.demo.entity.Resources;
 import com.beatles.page.Tree;
+import com.beatles.page.TreeView;
 
 /**
  * @author zhang lj
@@ -25,6 +26,6 @@ public interface IResourcesBiz {
 	List<Resources> getResourcesByPid(int pid);
 	
 	List<Tree> tree();
-	
-	
+
+	List<TreeView> treeView(int pid);
 }

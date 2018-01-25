@@ -8,15 +8,16 @@ import java.util.List;
  * @createTime 2018年1月25日 下午4:26:17
  */
 public class TreeView implements Serializable {
-	private long id;
+	private int id;
 	private String text;
 	private List<TreeView> nodes;
 
-	public long getId() {
+	
+	public int getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
