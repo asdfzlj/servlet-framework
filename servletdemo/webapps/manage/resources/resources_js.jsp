@@ -105,10 +105,10 @@
 					multiSelect : true, //多选
 					levels : 1,
 					onNodeChecked : function(event, data) {
-						alert(data.id);
+						//alert(data.id);
 					},
 					onNodeSelected : function(event, data) {
-						alert(data.id);
+						
 					}
 				});
 			},

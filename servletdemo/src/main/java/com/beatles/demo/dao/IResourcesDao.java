@@ -46,8 +46,6 @@ public interface IResourcesDao {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} finally {
-			util.release();
 		}
 		return _list;
 	}
