@@ -34,9 +34,9 @@
 						<label for="pid" class="col-sm-2 control-label">上级资源:</label>
 						<div class="col-sm-10">
 							<select name="pid" id="pid" class="form-control">
-								
+
 							</select>
-							<div id="treeview" style="display:none;"></div>
+							<div id="treeview" style="display: none;"></div>
 						</div>
 					</div>
 					<div class="hr-line-dashed"></div>
@@ -53,11 +53,18 @@
 							<input type="text" name="icon" class="form-control" id="icon">
 						</div>
 					</div>
+					<div class="form-group">
+						<label for="seq" class="col-sm-2 control-label">排序号:</label>
+						<div class="col-sm-10">
+							<input type="text" name="seq" value="2" class="form-control" placeholder="2">
+						</div>
+					</div>
 				</form>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-				<button type="submit" name="submit" class="btn btn-primary" id="btnAdd">添加</button>
+				<button type="submit" name="submit" class="btn btn-primary"
+					id="btnAdd">添加</button>
 			</div>
 		</div>
 	</div>
