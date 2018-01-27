@@ -123,6 +123,10 @@
 		$("#pid").click(function() {
 			$("#treeview").show();
 		});
+		//失去焦点的时候
+		$("#treeview").blur(function(){
+			$("#treeview").hide();
+		});
 		//结束 
 	});
 
