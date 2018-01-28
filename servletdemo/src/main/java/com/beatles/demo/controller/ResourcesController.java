@@ -47,9 +47,26 @@ public class ResourcesController extends HttpServlet {
 			treeView(request, response);
 		} else if ("add".equals(op)) {
 			add(request, response);
-		} else {
+		} else if("editPage".equals(op)) {
+			editPage(request,response);
+		}else if("addPage".equals(op)) {
+			editPage(request,response);
+		}else if("delete".equals(op)) {
+			delete(request,response);
+		}
+		else {
 			resources(request, response);
 		}
+	}
+
+	private void delete(HttpServletRequest request, HttpServletResponse response) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void editPage(HttpServletRequest request, HttpServletResponse response) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	/**
