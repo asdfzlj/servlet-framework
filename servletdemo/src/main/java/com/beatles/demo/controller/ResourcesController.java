@@ -39,6 +39,7 @@ public class ResourcesController extends HttpServlet {
 		process(request, response);
 	}
 
+	
 	protected void process(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		String op = request.getParameter("op");
 		if ("resources".equals(op)) {
